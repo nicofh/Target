@@ -1,0 +1,30 @@
+#googleMap
+%script{:src => "http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"}
+:javascript
+  function myMap() {
+  var mapProp= {
+      center:new google.maps.LatLng(-34.906268,-56.186120),
+      zoom:15,
+  };
+  var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+  }
+%script{:src => "https://maps.googleapis.com/maps/api/js?key=AIzaSyAiW1JcyQxgKFXNbSLy19mciRsUqSneuE4&callback=myMap"}
+#rectangle-3
+  #rectangle-2
+    %p#create-target CREATE TARGET
+  = image_tag image_path("group.svg"), |
+    id: "group"                        |
+  %p#create-new-target TARGET LIST
+  %div
+    %ul#topics
+      - @targets.each do |target|
+        %li= target.title
+  = image_tag image_path("smilies.png"), |
+    id: "smilies"                        |
+  :javascript
+    var $li = $('li').click(function() {
+        $li.removeClass('selected');
+        $(this).addClass('selected');
+        var value = $(this)[0].id;
+        $('#topic').val(value);
+    });

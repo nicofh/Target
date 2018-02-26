@@ -1,0 +1,293 @@
+// Place all the styles related to the Target controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+}
+
+select,input:focus { outline:0 !important; }
+
+#googleMap {
+	width: 75%;
+	height: 100%;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  float: right;
+}
+
+#rectangle-3 {
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+	width: 24.95%;
+	height: 100%;
+	background-color: #ffffff;
+	box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.3);
+  float: left;
+}
+
+#rectangle-3 #rectangle-2 {
+  margin-top: 0px;
+  padding-top: 0px;
+  border-top: 0px;
+	height: 59px;
+	background-color: #2fbcf7;
+  vertical-align: middle;
+}
+
+#create-target {
+  margin-top: 0px;
+  padding-top: 5%;
+  border-top: 0px;
+	height: 27px;
+	font-family: 'Open Sans';
+	font-size: 20px;
+	font-weight: 600;
+	letter-spacing: 3px;
+	text-align: center;
+	color: #ffffff;
+}
+
+#group {
+  margin-top: 2%;
+	object-fit: contain;
+  margin-left: 45%;
+}
+
+#create-new-target {
+  margin-top: 0;
+  padding-top: 0;
+	font-family: 'Open Sans';
+	font-size: 11px;
+	font-weight: 600;
+	letter-spacing: 1.6px;
+	text-align: center;
+	color: #000000;
+}
+
+#specify-area-lenght {
+  padding-top: 4%;
+  padding-left: 10%;
+	font-family: 'Open Sans';
+	font-size: 11px;
+	font-weight: 600;
+	letter-spacing: 0.7px;
+	text-align: left;
+	color: #000000;
+}
+
+#specify-area-lenght .text-style-1 {
+	letter-spacing: normal;
+}
+
+#rectangle {
+  margin-left: 10%;
+	width: 257px;
+	height: 39px;
+	border: solid 0.5px #000000;
+}
+
+#length {
+  margin-left: 40%;
+  width: 257px;
+	height: 39px;
+	font-family: 'Open Sans';
+	font-size: 13px;
+	font-weight: 600;
+	letter-spacing: 1.9px;
+	text-align: center;
+	color: #000000;
+  background: transparent;
+  border: transparent;
+  appearance:none;
+  -moz-appearance:none;
+  -webkit-appearance:none;
+  hover: disabled;
+}
+
+#target-title {
+  margin-left: 10%;
+	width: 142px;
+	height: 15px;
+	font-family: 'Open Sans';
+	font-size: 11px;
+	font-weight: 600;
+	letter-spacing: 0.7px;
+	text-align: left;
+	color: #000000;
+}
+
+#rectangle-copy {
+  margin-left: 10%;
+	width: 257px;
+	height: 39px;
+	border: solid 0.5px #000000;
+}
+
+#choose-a-title-for-y {
+  width: 257px;
+	height: 39px;
+	font-family: 'Open Sans';
+	font-size: 11px;
+	font-weight: 600;
+	letter-spacing: 0.7px;
+	text-align: center;
+	color: #000000;
+  background: transparent;
+  border: transparent;
+  appearance:none;
+  -moz-appearance:none;
+  -webkit-appearance:none;
+}
+
+#choose-a-title-for-y .text-style-1 {
+	letter-spacing: normal;
+}
+
+#select-a-topic {
+  margin-left: 10%;
+	width: 142px;
+	height: 15px;
+	font-family: 'Open Sans';
+	font-size: 11px;
+	font-weight: 600;
+	letter-spacing: 0.7px;
+	text-align: left;
+	color: #000000;
+}
+
+#rectangle-3 #rectangle-copy-2 {
+  margin-left: 10%;
+	width: 257px;
+	height: 39px;
+	border: solid 0.5px #000000;
+  border-bottom: transparent;
+}
+
+#what-do-you-want-to {
+	font-family: 'Open Sans';
+	font-size: 11px;
+	font-weight: 600;
+	letter-spacing: 0.7px;
+	text-align: left;
+	color: #000000;
+  text-align: center;
+}
+
+#rectangle-5 {
+	width: 257px;
+	height: 290px;
+	background-color: #ffffff;
+  border: solid 0.5px #000000;
+  margin-left: 10%;
+  margin-top: 0;
+}
+
+#topics {
+  padding-left: 10%;
+  margin-top: 2%;
+	font-family: 'Open Sans';
+	font-size: 13px;
+	letter-spacing: 1.9px;
+	text-align: left;
+}
+
+li {
+  padding: 6px;
+  border-bottom: solid 0.5px #000000;
+}
+
+li:hover {
+  background-color: #f4f4f4;
+  border-right: solid 0.5px #000000;
+}
+
+li.selected {
+  background-color: #f4f4f4;
+  border-right: solid 0.5px #000000;
+}
+
+#submit-div {
+	width: 113.5px;
+	height: 39px;
+	background-color: #000000;
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
+	border: solid 1px #000000;
+  padding: 0%;
+  margin-left: 34%;
+  margin-top: 5%;
+}
+
+#submit-div #submit {
+  margin-top: 0px;
+  padding-top: 9%;
+  padding-left: 12%;
+  border-top: 0px;
+	font-family: 'Open Sans';
+	font-size: 11px;
+	font-weight: 300;
+	letter-spacing: 1.6px;
+	text-align: center;
+	color: #ffffff;
+  background-color: transparent;
+  border: transparent;
+}
+
+#smilies {
+	width: 48px;
+	height: 28px;
+	object-fit: contain;
+  margin-top: 7%;
+  margin-left: 45%;
+}
+
+#Football {
+    list-style-image: url(football.svg);
+    list-style-position:outside;
+}
+
+#Travel {
+    list-style-image: url(travel.svg);
+    list-style-position:outside;
+}
+#Politics {
+    list-style-image: url(politics.svg);
+    list-style-position:outside;
+}
+#Art {
+    list-style-image: url(art.svg);
+    list-style-position:outside;
+}
+#Dating {
+    list-style-image: url(dating.svg);
+    list-style-position:outside;
+}
+#Music {
+    list-style-image: url(music.svg);
+    list-style-position:outside;
+}
+#Movies {
+    list-style-image: url(movies.svg);
+    list-style-position:outside;
+}
+#Series {
+    list-style-image: url(series.svg);
+    list-style-position:outside;
+}
+#Food {
+    list-style-image: url(food.svg);
+    list-style-position:outside;
+    border-bottom: transparent;
+}
+
+#alert {
+    padding: 2%;
+    margin-top: 3%;
+    font-family: 'Open Sans';
+    color: #ffffff;
+    background-color: #f44242;
+    text-align: center;
+}
