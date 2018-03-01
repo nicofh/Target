@@ -2,12 +2,12 @@
 %script{:src => "http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"}
 :javascript
   function myMap() {
-    var mapProp= {
-        center:new google.maps.LatLng(-34.906268,-56.186120),
+    var mapProp = {
+        center: new google.maps.LatLng(-34.906268,-56.186120),
         zoom:15,
     };
 
-    var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+    var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
 
     var marker = new google.maps.Marker({
               position: new google.maps.LatLng(-34.906268,-56.186120),
@@ -39,47 +39,41 @@
     $('#longitude').val(-56.186120);
   }
 %script{:src => "https://maps.googleapis.com/maps/api/js?key=AIzaSyAiW1JcyQxgKFXNbSLy19mciRsUqSneuE4&callback=myMap"}
-= form_for @target, url: {action: "create"}, html: {id:"rectangle-3"} do |f|
-  #rectangle-2
-    %p#create-target CREATE TARGET
-  = image_tag image_path("group.svg"), |
-    id: "group"                        |
-  %p#create-new-target CREATE NEW TARGET
-  %p#specify-area-lenght SPECIFY AREA LENGHT
-  #rectangle
-    = f.select(:length,[['100 m',100],['200 m',200],['500 m',500],['1 km', 1000]],{},id: "length")
-  %p#target-title TARGET TITLE
-  #rectangle-copy
-    = f.text_field(:title, id:"choose-a-title-for-y", value:"Choose a title for your target")
+= form_for @target, url: {action: "create"}, html: {class:"rectangle-3"} do |f|
+  .rectangle-2
+    %p.create-target= t('createTarget')
+  = image_tag image_path('group.svg'), |
+    class: "group"                        |
+  %p.page-title= t('createNewTarget')
+  %p.specify-area-lenght= t('specifyAreaLenght')
+  .length-rectangle
+    = f.select(:length,[['100 m',100],['200 m',200],['500 m',500],['1 km', 1000]],{},class: "length")
+  %p.target-title= t('targetTitle')
+  .title-rectangle
+    = f.text_field(:title, class:"title-input", value: t('chooseTitle'))
     %br/
-  %p#select-a-topic SELECT A TOPIC
-  #rectangle-copy-2
-    %p#what-do-you-want-to What do you want to talk about?
-  #rectangle-5
-    %ul#topics
-      %li#Football Football
-      %li#Travel Travel
-      %li#Politics Politics
-      %li#Art Art
-      %li#Dating Dating
-      %li#Music Music
-      %li#Movies Movies
-      %li#Series Series
-      %li#Food Food 
+  %p.select-a-topic= t('selectATopic')
+  .topics-title-rectangle
+    %p.topics-title= t('talkAbout')
+  .topics-rectangle
+    %ul.list
+      - @topics.each do |topic|
+        %li{class: topic}
+          = topic.capitalize
   = f.hidden_field(:topic, id:"topic")
   = f.hidden_field(:latitude, id:"latitude")
   = f.hidden_field(:longitude, id:"longitude")
   %br/
-  #submit-div
-    = f.submit("SAVE TARGET", id:"submit")
+  .submit-div
+    = f.submit(t('saveTarget'), class:"submit")
   - if flash[:alert]
-    #alert= flash[:alert]
+    .alert= flash[:alert]
   = image_tag image_path("smilies.png"), |
-    id: "smilies"                        |
+    class: "smilies"                        |
 :javascript
   var $li = $('li').click(function() {
       $li.removeClass('selected');
       $(this).addClass('selected');
-      var value = $(this)[0].id;
+      var value = $(this)[0].textContent;
       $('#topic').val(value);
   });

@@ -2,113 +2,107 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 html, body {
-  width: 100%;
   height: 100%;
-  margin: 0px;
+  margin: 0;
+  width: 100%;
 }
 
 select,input:focus { outline:0 !important; }
 
 #googleMap {
-	width: 75%;
-	height: 100%;
-  margin: 0px;
-  padding: 0px;
-  border: 0px;
+  border: 0;
   float: right;
-}
-
-#rectangle-3 {
-  margin: 0px;
-  padding: 0px;
-  border: 0px;
-	width: 24.95%;
 	height: 100%;
-	background-color: #ffffff;
-	box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.3);
-  float: left;
+  margin: 0;
+  padding: 0;
+  width: 75%;
 }
 
-#rectangle-3 #rectangle-2 {
-  margin-top: 0px;
-  padding-top: 0px;
-  border-top: 0px;
-	height: 59px;
-	background-color: #2fbcf7;
+.rectangle-3 {
+  border: 0;
+  box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.3);
+  float: left;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+	width: 24.95%;
+}
+
+.rectangle-3 .rectangle-2 {
+  background-color: #2fbcf7;
+  border-top: 0;
+  height: 59px;
+  margin-top: 0;
+  padding-top: 0;
   vertical-align: middle;
 }
 
-#create-target {
-  margin-top: 0px;
+.create-target {
+  border-top: 0;
+  color: white;
+  font-family: 'Open Sans';
+  font-size: 20px;
+  font-weight: 600;
+  height: 27px;
+  letter-spacing: 3px;
+  margin-top: 0;
   padding-top: 5%;
-  border-top: 0px;
-	height: 27px;
-	font-family: 'Open Sans';
-	font-size: 20px;
-	font-weight: 600;
-	letter-spacing: 3px;
 	text-align: center;
-	color: #ffffff;
 }
 
-#group {
-  margin-top: 2%;
+.group {
+  margin: 2% 0% 2% 45%;
 	object-fit: contain;
-  margin-left: 45%;
 }
 
-#create-new-target {
+.page-title {
+  font-family: 'Open Sans';
+	font-size: 11px;
+	font-weight: 600;
+  letter-spacing: 1.6px;
   margin-top: 0;
   padding-top: 0;
-	font-family: 'Open Sans';
-	font-size: 11px;
-	font-weight: 600;
-	letter-spacing: 1.6px;
 	text-align: center;
-	color: #000000;
 }
 
-#specify-area-lenght {
-  padding-top: 4%;
-  padding-left: 10%;
-	font-family: 'Open Sans';
+.specify-area-lenght {
+  font-family: 'Open Sans';
 	font-size: 11px;
 	font-weight: 600;
-	letter-spacing: 0.7px;
+  letter-spacing: 0.7px;
+  padding: 4% 0 0 10%;
 	text-align: left;
-	color: #000000;
 }
 
-#specify-area-lenght .text-style-1 {
+.specify-area-lenght .text-style-1 {
 	letter-spacing: normal;
 }
 
-#rectangle {
+.length-rectangle {
+  border: solid 0.5px;
+  height: 39px;
   margin-left: 10%;
 	width: 257px;
-	height: 39px;
-	border: solid 0.5px #000000;
 }
 
-#length {
-  margin-left: 40%;
-  width: 257px;
-	height: 39px;
-	font-family: 'Open Sans';
+.length {
+  -moz-appearance:none;
+  -webkit-appearance:none;
+  appearance:none;
+  background: transparent;
+  border: transparent;
+  font-family: 'Open Sans';
 	font-size: 13px;
 	font-weight: 600;
-	letter-spacing: 1.9px;
-	text-align: center;
-	color: #000000;
-  background: transparent;
-  border: transparent;
-  appearance:none;
-  -moz-appearance:none;
-  -webkit-appearance:none;
+  height: 39px;
   hover: disabled;
+  letter-spacing: 1.9px;
+  margin-left: 40%;
+  text-align: center;
+  width: 257px;
 }
 
-#target-title {
+.target-title {
   margin-left: 10%;
 	width: 142px;
 	height: 15px;
@@ -117,177 +111,168 @@ select,input:focus { outline:0 !important; }
 	font-weight: 600;
 	letter-spacing: 0.7px;
 	text-align: left;
-	color: #000000;
 }
 
-#rectangle-copy {
+.title-rectangle {
+  border: solid 0.5px;
+  height: 39px;
   margin-left: 10%;
 	width: 257px;
-	height: 39px;
-	border: solid 0.5px #000000;
 }
 
-#choose-a-title-for-y {
-  width: 257px;
-	height: 39px;
-	font-family: 'Open Sans';
-	font-size: 11px;
-	font-weight: 600;
-	letter-spacing: 0.7px;
-	text-align: center;
-	color: #000000;
-  background: transparent;
-  border: transparent;
-  appearance:none;
+.title-input {
   -moz-appearance:none;
   -webkit-appearance:none;
+  appearance:none;
+  background: transparent;
+  border: transparent;
+  font-family: 'Open Sans';
+	font-size: 11px;
+	font-weight: 600;
+  height: 39px;
+  letter-spacing: 0.7px;
+  text-align: center;
+  width: 257px;
 }
 
-#choose-a-title-for-y .text-style-1 {
+.title-input .text-style-1 {
 	letter-spacing: normal;
 }
 
-#select-a-topic {
-  margin-left: 10%;
-	width: 142px;
-	height: 15px;
-	font-family: 'Open Sans';
+.select-a-topic {
+  font-family: 'Open Sans';
 	font-size: 11px;
 	font-weight: 600;
-	letter-spacing: 0.7px;
-	text-align: left;
-	color: #000000;
+  height: 15px;
+  letter-spacing: 0.7px;
+  margin-left: 10%;
+  text-align: left;
+	width: 142px;
 }
 
-#rectangle-3 #rectangle-copy-2 {
+.rectangle-3 .topics-title-rectangle {
+	border: solid 0.5px;
+  border-bottom: transparent;
+  height: 39px;
   margin-left: 10%;
 	width: 257px;
-	height: 39px;
-	border: solid 0.5px #000000;
-  border-bottom: transparent;
 }
 
-#what-do-you-want-to {
+.topics-title {
 	font-family: 'Open Sans';
 	font-size: 11px;
 	font-weight: 600;
 	letter-spacing: 0.7px;
 	text-align: left;
-	color: #000000;
   text-align: center;
 }
 
-#rectangle-5 {
-	width: 257px;
-	height: 290px;
-	background-color: #ffffff;
-  border: solid 0.5px #000000;
-  margin-left: 10%;
-  margin-top: 0;
+.topics-rectangle {
+  border: solid 0.5px;
+  height: 290px;
+  margin: 0 0 0 10%;
+  width: 257px;
 }
 
-#topics {
-  padding-left: 10%;
-  margin-top: 2%;
-	font-family: 'Open Sans';
+.list {
+  font-family: 'Open Sans';
 	font-size: 13px;
-	letter-spacing: 1.9px;
+  letter-spacing: 1.9px;
+  margin-top: 2%;
+  padding-left: 10%;
 	text-align: left;
 }
 
 li {
+  border-bottom: solid 0.5px;
   padding: 6px;
-  border-bottom: solid 0.5px #000000;
 }
 
 li:hover {
   background-color: #f4f4f4;
-  border-right: solid 0.5px #000000;
+  border-right: solid 0.5px;
 }
 
 li.selected {
   background-color: #f4f4f4;
-  border-right: solid 0.5px #000000;
+  border-right: solid 0.5px;
 }
 
-#submit-div {
-	width: 113.5px;
-	height: 39px;
-	background-color: #000000;
+.submit-div {
+  background-color: black;
 	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
-	border: solid 1px #000000;
-  padding: 0%;
-  margin-left: 34%;
-  margin-top: 5%;
+	border: solid 1px;
+  height: 39px;
+  margin: 5% 0 0 34%;
+  padding: 0;
+	width: 113.5px;
 }
 
-#submit-div #submit {
-  margin-top: 0px;
-  padding-top: 9%;
-  padding-left: 12%;
-  border-top: 0px;
-	font-family: 'Open Sans';
+.submit-div .submit {
+  background-color: transparent;
+  border-top: 0;
+  border: transparent;
+	color: white;
+  font-family: 'Open Sans';
 	font-size: 11px;
 	font-weight: 300;
-	letter-spacing: 1.6px;
-	text-align: center;
-	color: #ffffff;
-  background-color: transparent;
-  border: transparent;
+  letter-spacing: 1.6px;
+  margin-top: 0;
+  padding: 9% 0 0 12%;
+  text-align: center;
 }
 
-#smilies {
-	width: 48px;
+.smilies {
 	height: 28px;
+  margin: 7% 0 0 45%;
 	object-fit: contain;
-  margin-top: 7%;
-  margin-left: 45%;
+  width: 48px;
 }
 
-#Football {
-    list-style-image: url(football.svg);
-    list-style-position:outside;
+.football {
+  list-style-image: url(football.svg);
+  list-style-position:outside;
 }
 
-#Travel {
-    list-style-image: url(travel.svg);
-    list-style-position:outside;
+.travel {
+  list-style-image: url(travel.svg);
+  list-style-position:outside;
 }
-#Politics {
-    list-style-image: url(politics.svg);
-    list-style-position:outside;
+.politics {
+  list-style-image: url(politics.svg);
+  list-style-position:outside;
 }
-#Art {
-    list-style-image: url(art.svg);
-    list-style-position:outside;
+.art {
+  list-style-image: url(art.svg);
+  list-style-position:outside;
 }
-#Dating {
-    list-style-image: url(dating.svg);
-    list-style-position:outside;
+.dating {
+  list-style-image: url(dating.svg);
+  list-style-position:outside;
 }
-#Music {
-    list-style-image: url(music.svg);
-    list-style-position:outside;
+.music {
+  list-style-image: url(music.svg);
+  list-style-position:outside;
 }
-#Movies {
-    list-style-image: url(movies.svg);
-    list-style-position:outside;
+.movies {
+  list-style-image: url(movies.svg);
+  list-style-position:outside;
 }
-#Series {
-    list-style-image: url(series.svg);
-    list-style-position:outside;
+.series {
+  list-style-image: url(series.svg);
+  list-style-position:outside;
 }
-#Food {
-    list-style-image: url(food.svg);
-    list-style-position:outside;
-    border-bottom: transparent;
+.food {
+  list-style-image: url(food.svg);
+  list-style-position:outside;
+  border-bottom: transparent;
 }
 
-#alert {
-    padding: 2%;
-    margin-top: 3%;
-    font-family: 'Open Sans';
-    color: #ffffff;
-    background-color: #f44242;
-    text-align: center;
+.alert {
+  background-color: #f44242;
+  color: white;
+  font-family: 'Open Sans';
+  margin-top: 3%;
+  padding: 2%;
+  text-align: center;
 }

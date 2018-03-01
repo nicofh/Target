@@ -1,17 +1,10 @@
 # This will guess the User class
 FactoryBot.define do
   factory :target do
-    topic 'Football'
-    length '200'
-    title 'Prueba'
-    latitude '-34'
-    longitude '-54'
+    topic     { Faker::Book.genre }
+    length    { Faker::Number.between(100, 1000) }
+    title     { Faker::Friends.character }
+    latitude  { Faker::Address.latitude }
+    longitude { Faker::Address.longitude }
   end
-
-  # This will use the User class (Admin would have been guessed)
-  # factory :admin, class: User do
-  #   first_name "Admin"
-  #   last_name  "User"
-  #   admin      true
-  # end
 end

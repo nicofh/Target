@@ -1,6 +1,7 @@
 class TargetsController < ApplicationController
   def new
     @target = Target.new
+    @topics = Target::TOPICS
   end
 
   def index
@@ -9,11 +10,11 @@ class TargetsController < ApplicationController
 
   def create
     @target = Target.create(target_params)
-    if @target.save
+    if @target.persisted?
       redirect_to targets_path
     else
-      flash.now[:alert] = 'Target was not saved'
-      render 'new'
+      flash.now[:alert] = t(:targetFail)
+      render :new
     end
   end
 

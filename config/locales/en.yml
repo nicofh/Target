@@ -30,4 +30,12 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  targetFail: 'Target was not saved'
+  createTarget: 'CREATE TARGET'
+  createNewTarget: 'CREATE NEW TARGET'
+  specifyAreaLenght: 'SPECIFY AREA LENGHT'
+  targetTitle: 'TARGET TITLE'
+  chooseTitle: 'Choose a title for your target'
+  selectATopic: 'SELECT A TOPIC'
+  talkAbout: 'What do you want to talk about?'
+  saveTarget: 'SAVE TARGET'
