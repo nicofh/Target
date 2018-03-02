@@ -6,9 +6,10 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:light,bold,italic,800,700,300,600,800,400" rel="stylesheet" type="text/css"></link>
   </head>
 
-  <body>
+  <body onload="loadLocation();">
     <%= yield %>
   </body>
 </html>
