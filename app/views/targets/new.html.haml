@@ -10,15 +10,15 @@
     var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
 
     var marker = new google.maps.Marker({
-              position: new google.maps.LatLng(-34.906268,-56.186120),
-              map: map,
-              icon: {
-            		url: "/assets/marker.svg"
-            	}
-            });
+      position: new google.maps.LatLng(-34.906268,-56.186120),
+      map: map,
+      icon: {
+    		url: "/assets/marker.svg"
+    	}
+    });
 
     map.addListener('click', function(e) {
-        placeMarker(e.latLng, map);
+      placeMarker(e.latLng, map);
     });
 
     function placeMarker(location) {
