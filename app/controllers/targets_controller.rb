@@ -9,11 +9,12 @@ class TargetsController < ApplicationController
   end
 
   def create
+    @topics = Target::TOPICS
     @target = Target.create(target_params)
     if @target.persisted?
       redirect_to targets_path
     else
-      flash.now[:alert] = t(:targetFail)
+      flash.now[:alert] = t(:target_fail)
       render :new
     end
   end
