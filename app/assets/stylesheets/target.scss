@@ -230,40 +230,40 @@ li.selected {
 }
 
 .football {
-  list-style-image: url(football.svg);
+  list-style-image: image-url(football);
   list-style-position:outside;
 }
 
 .travel {
-  list-style-image: url(travel.svg);
+  list-style-image: image-url(travel);
   list-style-position:outside;
 }
 .politics {
-  list-style-image: url(politics.svg);
+  list-style-image: image-url(politics);
   list-style-position:outside;
 }
 .art {
-  list-style-image: url(art.svg);
+  list-style-image: image-url(art);
   list-style-position:outside;
 }
 .dating {
-  list-style-image: url(dating.svg);
+  list-style-image: image-url(dating);
   list-style-position:outside;
 }
 .music {
-  list-style-image: url(music.svg);
+  list-style-image: image-url(music);
   list-style-position:outside;
 }
 .movies {
-  list-style-image: url(movies.svg);
+  list-style-image: image-url(movies);
   list-style-position:outside;
 }
 .series {
-  list-style-image: url(series.svg);
+  list-style-image: image-url(series);
   list-style-position:outside;
 }
 .food {
-  list-style-image: url(food.svg);
+  list-style-image: image-url(food);
   list-style-position:outside;
   border-bottom: transparent;
 }
