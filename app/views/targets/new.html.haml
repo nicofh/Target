@@ -57,7 +57,7 @@
     %p.topics-title= t('talk_about')
   .topics-rectangle
     %ul.list
-      - @topics.each do |topic|
+      - topics.each do |topic|
         %li{class: topic}
           = topic.capitalize
   = f.hidden_field(:topic, id:"topic")

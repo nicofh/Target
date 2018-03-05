@@ -1,6 +1,6 @@
 class TargetsController < ApplicationController
 
-  before_action :load_topics, only: [:new, :create]
+  helper_method :topics
 
   def new
     @target = Target.new
@@ -24,8 +24,8 @@ class TargetsController < ApplicationController
     params.require(:target).permit(:topic, :title, :length, :latitude, :longitude)
   end
 
-  def load_topics
-    @topics = Target::TOPICS
+  def topics
+    @topics ||= Target::TOPICS
   end
 
 end
