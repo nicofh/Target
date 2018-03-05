@@ -1,5 +1,4 @@
 class TargetsController < ApplicationController
-
   helper_method :topics
 
   def new
@@ -27,5 +26,4 @@ class TargetsController < ApplicationController
   def topics
     @topics ||= Target::TOPICS
   end
-
 end
