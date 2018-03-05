@@ -1,7 +1,9 @@
 class TargetsController < ApplicationController
+
+  before_action :load_topics, only: [:new, :create]
+
   def new
     @target = Target.new
-    @topics = Target::TOPICS
   end
 
   def index
@@ -9,7 +11,6 @@ class TargetsController < ApplicationController
   end
 
   def create
-    @topics = Target::TOPICS
     @target = Target.create(target_params)
     if @target.persisted?
       redirect_to targets_path
@@ -22,4 +23,9 @@ class TargetsController < ApplicationController
   def target_params
     params.require(:target).permit(:topic, :title, :length, :latitude, :longitude)
   end
+
+  def load_topics
+    @topics = Target::TOPICS
+  end
+
 end
