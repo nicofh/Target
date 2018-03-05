@@ -1,7 +1,9 @@
 class TargetsController < ApplicationController
+
+  helper_method :topics
+
   def new
     @target = Target.new
-    @topics = Target::TOPICS
   end
 
   def index
@@ -13,7 +15,7 @@ class TargetsController < ApplicationController
     if @target.persisted?
       redirect_to targets_path
     else
-      flash.now[:alert] = t(:targetFail)
+      flash.now[:alert] = t(:target_fail)
       render :new
     end
   end
@@ -21,4 +23,9 @@ class TargetsController < ApplicationController
   def target_params
     params.require(:target).permit(:topic, :title, :length, :latitude, :longitude)
   end
+
+  def topics
+    @topics ||= Target::TOPICS
+  end
+
 end

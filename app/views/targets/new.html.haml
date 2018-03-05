@@ -41,23 +41,23 @@
 %script{:src => "https://maps.googleapis.com/maps/api/js?key=AIzaSyAiW1JcyQxgKFXNbSLy19mciRsUqSneuE4&callback=myMap"}
 = form_for @target, url: {action: "create"}, html: {class:"rectangle-3"} do |f|
   .rectangle-2
-    %p.create-target= t('createTarget')
+    %p.create-target= t('create_target')
   = image_tag image_path('group.svg'), |
     class: "group"                        |
-  %p.page-title= t('createNewTarget')
-  %p.specify-area-lenght= t('specifyAreaLenght')
+  %p.page-title= t('create_new_target')
+  %p.specify-area-lenght= t('specify_area_lenght')
   .length-rectangle
     = f.select(:length,[['100 m',100],['200 m',200],['500 m',500],['1 km', 1000]],{},class: "length")
-  %p.target-title= t('targetTitle')
+  %p.target-title= t('target_title')
   .title-rectangle
-    = f.text_field(:title, class:"title-input", value: t('chooseTitle'))
+    = f.text_field(:title, class:"title-input", value: t('choose_title'))
     %br/
-  %p.select-a-topic= t('selectATopic')
+  %p.select-a-topic= t('select_a_topic')
   .topics-title-rectangle
-    %p.topics-title= t('talkAbout')
+    %p.topics-title= t('talk_about')
   .topics-rectangle
     %ul.list
-      - @topics.each do |topic|
+      - topics.each do |topic|
         %li{class: topic}
           = topic.capitalize
   = f.hidden_field(:topic, id:"topic")
@@ -65,7 +65,7 @@
   = f.hidden_field(:longitude, id:"longitude")
   %br/
   .submit-div
-    = f.submit(t('saveTarget'), class:"submit")
+    = f.submit(t('save_target'), class:"submit")
   - if flash[:alert]
     .alert= flash[:alert]
   = image_tag image_path("smilies.png"), |
