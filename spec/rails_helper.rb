@@ -6,9 +6,11 @@ require File.expand_path('../../config/environment', __FILE__)
 abort('The Rails environment is running in production mode!') if Rails.env.production?
 require 'rspec/rails'
 require 'support/factory_bot'
+require 'support/controller_macros'
 # Add additional requires below this line. Rails is not loaded until this point!
 require 'rails_helper'
 require 'database_cleaner'
+require 'devise'
 DatabaseCleaner.strategy = :truncation
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
@@ -30,6 +32,8 @@ DatabaseCleaner.strategy = :truncation
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
+  config.include Devise::Test::ControllerHelpers, type: :controller
+  config.extend ControllerMacros, type: :controller
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 

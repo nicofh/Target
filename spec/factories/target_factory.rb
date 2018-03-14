@@ -6,5 +6,6 @@ FactoryBot.define do
     title     { Faker::Friends.character }
     latitude  { Faker::Address.latitude }
     longitude { Faker::Address.longitude }
+    user      { create :user }
   end
 end
