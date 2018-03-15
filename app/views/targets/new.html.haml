@@ -2,7 +2,7 @@
 %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"}
 :javascript
 
-  var map_topic_image = {
+  var mapTopicImage = {
     'Football' : "#{image_path('football.svg')}",
     'Travel' : "#{image_path('travel.svg')}",
     'Politics' : "#{image_path('politics.svg')}",
@@ -17,10 +17,10 @@
   function myMap() {
     navigator.geolocation.getCurrentPosition(showPosition);
     function showPosition(position) {
-      var user_position = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-      map.panTo(user_position);
-      new_marker.setPosition(user_position);
-      new_radius.setCenter(user_position);
+      var userPosition = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+      map.panTo(userPosition);
+      newMarker.setPosition(userPosition);
+      newRadius.setCenter(userPosition);
     }
 
     var mapProp = {
@@ -30,7 +30,7 @@
 
     var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
 
-    var new_marker = new google.maps.Marker({
+    var newMarker = new google.maps.Marker({
       position: new google.maps.LatLng(-34.906268,-56.186120),
       map: map,
       icon: {
@@ -38,7 +38,7 @@
     	}
     });
 
-    var new_radius = new google.maps.Circle({
+    var newRadius = new google.maps.Circle({
       strokeColor: '#efc638',
       strokeWeight: 2,
       fillColor: 'white',
@@ -53,12 +53,12 @@
     });
 
     function placeMarker(location) {
-      if (new_marker == null) {
-        new_marker = new google.maps.Marker({
-        position: location,
-        map: map
+      if (newMarker == null) {
+        newMarker = new google.maps.Marker({
+          position: location,
+          map: map
         });
-        new_radius = new google.maps.Circle({
+        newRadius = new google.maps.Circle({
           strokeColor: '#efc638',
           strokeWeight: 2,
           fillColor: 'white',
@@ -68,9 +68,9 @@
           radius: 100
         });
       } else {
-         new_marker.setPosition(location);
-         new_radius.setCenter(location);
-         new_radius.setRadius(parseInt($('#radius_select').val()));
+         newMarker.setPosition(location);
+         newRadius.setCenter(location);
+         newRadius.setRadius(parseInt($('#radius_select').val()));
       }
       $('#latitude').val(location.lat);
       $('#longitude').val(location.lng);
@@ -82,9 +82,7 @@
           marker = new google.maps.Marker({
             position: new google.maps.LatLng(this.latitude, this.longitude),
             map: map,
-            icon: {
-          		url: map_topic_image[this.topic]
-          	}
+            icon: { url: mapTopicImage[this.topic] }
           });
 
           var radius = new google.maps.Circle({
@@ -97,13 +95,11 @@
             radius: this.length
           });
 
-
         });
       });
     });
-
   }
-
+  
   function loadLocation() {
     navigator.geolocation.getCurrentPosition(showPosition);
     function showPosition(position) {
