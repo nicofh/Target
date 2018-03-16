@@ -1,7 +1,28 @@
 #googleMap
 %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"}
 :javascript
+
+  var mapTopicImage = {
+    'Football' : "#{image_path('football.svg')}",
+    'Travel' : "#{image_path('travel.svg')}",
+    'Politics' : "#{image_path('politics.svg')}",
+    'Art' : "#{image_path('art.svg')}",
+    'Dating' : "#{image_path('dating.svg')}",
+    'Music' : "#{image_path('music.svg')}",
+    'Movies' : "#{image_path('movies.svg')}",
+    'Series' : "#{image_path('series.svg')}",
+    'Food' : "#{image_path('food.svg')}"
+  };
+
   function myMap() {
+    navigator.geolocation.getCurrentPosition(showPosition);
+    function showPosition(position) {
+      var userPosition = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+      map.panTo(userPosition);
+      newMarker.setPosition(userPosition);
+      newRadius.setCenter(userPosition);
+    }
+
     var mapProp = {
         center: new google.maps.LatLng(-34.906268,-56.186120),
         zoom:15,
@@ -9,7 +30,7 @@
 
     var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
 
-    var marker = new google.maps.Marker({
+    var newMarker = new google.maps.Marker({
       position: new google.maps.LatLng(-34.906268,-56.186120),
       map: map,
       icon: {
@@ -17,26 +38,73 @@
     	}
     });
 
+    var newRadius = new google.maps.Circle({
+      strokeColor: '#efc638',
+      strokeWeight: 2,
+      fillColor: 'white',
+      fillOpacity: 0.7,
+      map: map,
+      center: new google.maps.LatLng(-34.906268,-56.186120),
+      radius: 100
+    });
+
     map.addListener('click', function(e) {
       placeMarker(e.latLng, map);
     });
 
     function placeMarker(location) {
-      if (marker == null) {
-        marker = new google.maps.Marker({
-        position: location,
-        map: map
+      if (newMarker == null) {
+        newMarker = new google.maps.Marker({
+          position: location,
+          map: map
+        });
+        newRadius = new google.maps.Circle({
+          strokeColor: '#efc638',
+          strokeWeight: 2,
+          fillColor: 'white',
+          fillOpacity: 0.7,
+          map: map,
+          center: new google.maps.LatLng(-34.906268,-56.186120),
+          radius: 100
         });
       } else {
-         marker.setPosition(location);
+         newMarker.setPosition(location);
+         newRadius.setCenter(location);
+         newRadius.setRadius(parseInt($('#radius_select').val()));
       }
       $('#latitude').val(location.lat);
       $('#longitude').val(location.lng);
     }
+
+    $( document ).ready(function() {
+      $.getJSON("#{targets_path(format: :json)}", function(json) {
+        $(json).each(function() {
+          marker = new google.maps.Marker({
+            position: new google.maps.LatLng(this.latitude, this.longitude),
+            map: map,
+            icon: { url: mapTopicImage[this.topic] }
+          });
+
+          var radius = new google.maps.Circle({
+            strokeColor: 'transparent',
+            strokeWeight: 2,
+            fillColor: '#efc537',
+            fillOpacity: 0.7,
+            map: map,
+            center: new google.maps.LatLng(this.latitude, this.longitude),
+            radius: this.length
+          });
+
+        });
+      });
+    });
   }
   function loadLocation() {
-    $('#latitude').val(-34.906268);
-    $('#longitude').val(-56.186120);
+    navigator.geolocation.getCurrentPosition(showPosition);
+    function showPosition(position) {
+      $('#latitude').val(position.coords.latitude);
+      $('#longitude').val(position.coords.longitude);
+    }
   }
 %script{:src => "https://maps.googleapis.com/maps/api/js?key=AIzaSyAiW1JcyQxgKFXNbSLy19mciRsUqSneuE4&callback=myMap"}
 = form_for @target, url: {action: "create"}, html: {class:"rectangle-3"} do |f|
@@ -47,7 +115,7 @@
   %p.page-title= t('create_new_target')
   %p.specify-area-lenght= t('specify_area_lenght')
   .length-rectangle
-    = f.select(:length,[['100 m',100],['200 m',200],['500 m',500],['1 km', 1000]],{},class: "length")
+    = f.select(:length,[['100 m',100],['200 m',200],['500 m',500],['1 km', 1000]],{},id: "radius_select" ,class: "length")
   %p.target-title= t('target_title')
   .title-rectangle
     = f.text_field(:title, class:"title-input", value: t('choose_title'))
@@ -63,6 +131,8 @@
   = f.hidden_field(:topic, id:"topic")
   = f.hidden_field(:latitude, id:"latitude")
   = f.hidden_field(:longitude, id:"longitude")
+  - if current_user
+    = f.hidden_field(:user_id, value: current_user.id)
   %br/
   .submit-div
     = f.submit(t('save_target'), class:"submit")
@@ -74,6 +144,6 @@
   var $li = $('li').click(function() {
       $li.removeClass('selected');
       $(this).addClass('selected');
-      var value = $(this)[0].textContent;
+      var value = $(this)[0].innerText;
       $('#topic').val(value);
   });

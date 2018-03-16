@@ -75,3 +75,7 @@ gem 'faker', '~> 1.8', '>= 1.8.7'
 gem 'i18n', '~> 0.9.4'
 
 gem 'pg', '~> 0.21.0'
+
+gem 'devise', '~> 4.4', '>= 4.4.1'
+
+gem 'omniauth-facebook', '~> 4.0'
