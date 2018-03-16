@@ -13,7 +13,6 @@ describe TargetsController, type: :controller do
         end.to change(Target, :count).by(1)
       end
     end
-
     context 'when the user is not logged in' do
       it 'does not create target' do
         expect do
