@@ -79,3 +79,5 @@ gem 'pg', '~> 0.21.0'
 gem 'devise', '~> 4.4', '>= 4.4.1'
 
 gem 'omniauth-facebook', '~> 4.0'
+
+gem 'figaro', '~> 1.1', '>= 1.1.1'
