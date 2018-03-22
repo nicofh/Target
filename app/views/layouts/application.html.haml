@@ -1,0 +1,26 @@
+!!!
+%html
+  %head
+    %meta{content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Target
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    %link{href: "//fonts.googleapis.com/css?family=Open+Sans:light,bold,italic,800,700,300,600,800,400", :rel => "stylesheet", :type => "text/css"}/
+  %body{onload: "loadLocation();"}
+    :javascript
+      var mapTopicImage = {
+        'Football' : "#{image_path('football.svg')}",
+        'Travel'   : "#{image_path('travel.svg')}",
+        'Politics' : "#{image_path('politics.svg')}",
+        'Art'      : "#{image_path('art.svg')}",
+        'Dating'   : "#{image_path('dating.svg')}",
+        'Music'    : "#{image_path('music.svg')}",
+        'Movies'   : "#{image_path('movies.svg')}",
+        'Series'   : "#{image_path('series.svg')}",
+        'Food'     : "#{image_path('food.svg')}",
+        'Marker'   : "#{image_path('marker.svg')}",
+        'Json'     : "#{targets_path(format: :json)}"
+      };
+    = render "targets/facebook_button"
+    = yield

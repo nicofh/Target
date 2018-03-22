@@ -1,14 +1,8 @@
 #googleMap
-%script{:src => "http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"}
+%script{src: "http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"}
+%script{src: "https://maps.googleapis.com/maps/api/js?key=" + ENV['GOOGLE_API_KEY'] + "&callback=targetIndex"}
 :javascript
-  function myMap() {
-  var mapProp = {
-      center:new google.maps.LatLng(-34.906268,-56.186120),
-      zoom:15,
-  };
-  var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
-  }
-%script{src: "https://maps.googleapis.com/maps/api/js?key=AIzaSyAiW1JcyQxgKFXNbSLy19mciRsUqSneuE4&callback=myMap"}
+  targetIndex();
 .rectangle-3
   .rectangle-2
     %p.create-target CREATE TARGET
