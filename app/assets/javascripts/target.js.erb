@@ -16,15 +16,7 @@ function targetNew() {
     }
   });
 
-  var newRadius = new google.maps.Circle({
-    strokeColor: '#efc638',
-    strokeWeight: 2,
-    fillColor: 'white',
-    fillOpacity: 0.7,
-    map: map,
-    center: new google.maps.LatLng(-34.906268,-56.186120),
-    radius: 100
-  });
+  var newRadius = createCircle(map);
 
   map.addListener('click', function(e) {
     placeMarker(e.latLng, map);
@@ -36,15 +28,7 @@ function targetNew() {
         position: location,
         map: map
       });
-      newRadius = new google.maps.Circle({
-        strokeColor: '#efc638',
-        strokeWeight: 2,
-        fillColor: 'white',
-        fillOpacity: 0.7,
-        map: map,
-        center: new google.maps.LatLng(-34.906268,-56.186120),
-        radius: 100
-      });
+      newRadius = createCircle(map);
     } else {
        newMarker.setPosition(location);
        newRadius.setCenter(location);
@@ -100,3 +84,16 @@ function loadLocation() {
     $('#longitude').val(position.coords.longitude);
   }
 };
+
+function createCircle(map) {
+  var circle = new google.maps.Circle({
+    strokeColor: '#efc638',
+    strokeWeight: 2,
+    fillColor: 'white',
+    fillOpacity: 0.7,
+    map: map,
+    center: new google.maps.LatLng(-34.906268,-56.186120),
+    radius: 100
+  });
+  return circle;
+}

@@ -1,13 +1,13 @@
 !!!
 %html
   %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title Target
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-    %link{:href => "//fonts.googleapis.com/css?family=Open+Sans:light,bold,italic,800,700,300,600,800,400", :rel => "stylesheet", :type => "text/css"}/
-  %body{:onload => "loadLocation();"}
+    %link{href: "//fonts.googleapis.com/css?family=Open+Sans:light,bold,italic,800,700,300,600,800,400", :rel => "stylesheet", :type => "text/css"}/
+  %body{onload: "loadLocation();"}
     :javascript
       var mapTopicImage = {
         'Football' : "#{image_path('football.svg')}",

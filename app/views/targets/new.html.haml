@@ -1,6 +1,6 @@
 #googleMap
 %script{src: "http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"}
-%script{src: "https://maps.googleapis.com/maps/api/js?key=AIzaSyAiW1JcyQxgKFXNbSLy19mciRsUqSneuE4&callback=targetNew"}
+%script{src: "https://maps.googleapis.com/maps/api/js?key=" + ENV['GOOGLE_API_KEY'] + "&callback=targetNew"}
 :javascript
   targetNew();
 = form_for @target, url: {action: "create"}, html: {class:"rectangle-3"} do |f|
