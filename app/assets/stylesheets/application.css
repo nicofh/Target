@@ -24,10 +24,10 @@ html, body {
 select,input:focus { outline:0 !important; }
 
 .smilies-big {
-  height: 78px;
+  height: 7.8rem;
   margin: 5% 0 0 46%;
   object-fit: contain;
-  width: 133px;
+  width: 13.3rem;
 }
 
 .target-mvd {
@@ -69,7 +69,7 @@ select,input:focus { outline:0 !important; }
   letter-spacing: normal;
   margin-left: 39%;
   text-align: center;
-  width: 321px;
+  width: 32.1rem;
 }
 
 .fb-block {
@@ -79,7 +79,7 @@ select,input:focus { outline:0 !important; }
   margin-left: 43%;
   padding: 0;
   text-align: center;
-  width: 200px;
+  width: 20rem;
 }
 
 .fb {
