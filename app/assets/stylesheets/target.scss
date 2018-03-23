@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 html, body {
+  font-size: 62.5%;
   height: 100%;
   margin: 0;
   width: 100%;
@@ -58,10 +59,10 @@ select,input:focus { outline:0 !important; }
   border-top: 0;
   color: white;
   font-family: 'Open Sans';
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: 600;
   height: 27px;
-  letter-spacing: 3px;
+  letter-spacing: 0.3rem;
   margin-top: 0;
   padding-top: 5%;
 	text-align: center;
@@ -74,9 +75,9 @@ select,input:focus { outline:0 !important; }
 
 .page-title {
   font-family: 'Open Sans';
-	font-size: 11px;
+	font-size: 1.1rem;
 	font-weight: 600;
-  letter-spacing: 1.6px;
+  letter-spacing: 0.16rem;
   margin-top: 0;
   padding-top: 0;
 	text-align: center;
@@ -84,9 +85,9 @@ select,input:focus { outline:0 !important; }
 
 .specify-area-lenght {
   font-family: 'Open Sans';
-	font-size: 11px;
+	font-size: 1.1rem;
 	font-weight: 600;
-  letter-spacing: 0.7px;
+  letter-spacing: 0.07rem;
   padding: 4% 0 0 10%;
 	text-align: left;
 }
@@ -109,11 +110,11 @@ select,input:focus { outline:0 !important; }
   background: transparent;
   border: transparent;
   font-family: 'Open Sans';
-	font-size: 13px;
+	font-size: 1.3rem;
 	font-weight: 600;
   height: 39px;
   hover: disabled;
-  letter-spacing: 1.9px;
+  letter-spacing: 0.19rem;
   margin-left: 40%;
   text-align: center;
   width: 257px;
@@ -124,9 +125,9 @@ select,input:focus { outline:0 !important; }
 	width: 142px;
 	height: 15px;
 	font-family: 'Open Sans';
-	font-size: 11px;
+	font-size: 1.1rem;
 	font-weight: 600;
-	letter-spacing: 0.7px;
+	letter-spacing: 0.07rem;
 	text-align: left;
 }
 

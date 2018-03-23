@@ -14,30 +14,31 @@
  *= require_self
  */
 html, body {
+  font-size: 62.5%;
   height: 100%;
   margin: 0;
-  width: 100%;
   overflow-y: scroll;
+  width: 100%;
 }
 
 select,input:focus { outline:0 !important; }
 
 .smilies-big {
   height: 78px;
+  margin: 5% 0 0 46%;
   object-fit: contain;
   width: 133px;
-  margin: 5% 0 0 46%;
 }
 
 .target-mvd {
   color: black;
   font-family: 'Open Sans';
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: bold;
   font-style: normal;
   font-stretch: normal;
   line-height: normal;
-  letter-spacing: 3px;
+  letter-spacing: 0.3rem;
   margin-left: 45%;
 }
 
@@ -48,7 +49,7 @@ select,input:focus { outline:0 !important; }
 .home-title {
   color: #212121;
   font-family: 'Open Sans';
-  font-size: 18px;
+  font-size: 1.8rem;
   font-weight: 600;
   font-style: normal;
   font-stretch: normal;
@@ -60,7 +61,7 @@ select,input:focus { outline:0 !important; }
 .home-text {
   color: black;
   font-family: 'Open Sans';
-  font-size: 14px;
+  font-size: 1.4rem;
   font-weight: normal;
   font-style: normal;
   font-stretch: normal;
@@ -84,5 +85,6 @@ select,input:focus { outline:0 !important; }
 .fb {
   color: white;
   font-family: 'Open Sans';
+  font-size: 1.6rem;
   text-decoration: none;
 }
