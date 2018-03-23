@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 html, body {
+  font-size: 62.5%;
   height: 100%;
   margin: 0;
   width: 100%;
@@ -19,7 +20,7 @@ select,input:focus { outline:0 !important; }
   width: 75%;
 }
 
-.fb-block {
+.fb-logout-block {
   background-color: #3B5998;
   float: left;
   height: 3%;
@@ -30,14 +31,14 @@ select,input:focus { outline:0 !important; }
   width: 24.95%;
 }
 
-.fb {
+.fb-logout {
   color: white;
   font-family: 'Open Sans';
 }
 
 .rectangle-3 {
   border: 0;
-  box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0.2rem 0.4rem 0.1rem rgba(0, 0, 0, 0.3);
   float: left;
   height: 97%;
   margin: 0;
@@ -48,7 +49,7 @@ select,input:focus { outline:0 !important; }
 .rectangle-3 .rectangle-2 {
   background-color: #2fbcf7;
   border-top: 0;
-  height: 59px;
+  height: 5.9rem;
   margin-top: 0;
   padding-top: 0;
   vertical-align: middle;
@@ -58,10 +59,10 @@ select,input:focus { outline:0 !important; }
   border-top: 0;
   color: white;
   font-family: 'Open Sans';
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: 600;
-  height: 27px;
-  letter-spacing: 3px;
+  height: 2.7rem;
+  letter-spacing: 0.3rem;
   margin-top: 0;
   padding-top: 5%;
 	text-align: center;
@@ -74,9 +75,9 @@ select,input:focus { outline:0 !important; }
 
 .page-title {
   font-family: 'Open Sans';
-	font-size: 11px;
+	font-size: 1.1rem;
 	font-weight: 600;
-  letter-spacing: 1.6px;
+  letter-spacing: 0.16rem;
   margin-top: 0;
   padding-top: 0;
 	text-align: center;
@@ -84,9 +85,9 @@ select,input:focus { outline:0 !important; }
 
 .specify-area-lenght {
   font-family: 'Open Sans';
-	font-size: 11px;
+	font-size: 1.1rem;
 	font-weight: 600;
-  letter-spacing: 0.7px;
+  letter-spacing: 0.07rem;
   padding: 4% 0 0 10%;
 	text-align: left;
 }
@@ -96,10 +97,10 @@ select,input:focus { outline:0 !important; }
 }
 
 .length-rectangle {
-  border: solid 0.5px;
-  height: 39px;
+  border: solid 0.05rem;
+  height: 3.9rem;
   margin-left: 10%;
-	width: 257px;
+	width: 25.7rem;
 }
 
 .length {
@@ -109,32 +110,32 @@ select,input:focus { outline:0 !important; }
   background: transparent;
   border: transparent;
   font-family: 'Open Sans';
-	font-size: 13px;
+	font-size: 1.3rem;
 	font-weight: 600;
-  height: 39px;
+  height: 3.9rem;
   hover: disabled;
-  letter-spacing: 1.9px;
+  letter-spacing: 0.19rem;
   margin-left: 40%;
   text-align: center;
-  width: 257px;
+  width: 25.7rem;
 }
 
 .target-title {
   margin-left: 10%;
-	width: 142px;
-	height: 15px;
+	width: 14.2rem;
+	height: 1.5rem;
 	font-family: 'Open Sans';
-	font-size: 11px;
+	font-size: 1.1rem;
 	font-weight: 600;
-	letter-spacing: 0.7px;
+	letter-spacing: 0.07rem;
 	text-align: left;
 }
 
 .title-rectangle {
-  border: solid 0.5px;
-  height: 39px;
+  border: solid 0.05rem;
+  height: 3.9rem;
   margin-left: 10%;
-	width: 257px;
+	width: 25.7rem;
 }
 
 .title-input {
@@ -144,12 +145,12 @@ select,input:focus { outline:0 !important; }
   background: transparent;
   border: transparent;
   font-family: 'Open Sans';
-	font-size: 11px;
+	font-size: 1.1rem;
 	font-weight: 600;
-  height: 39px;
-  letter-spacing: 0.7px;
+  height: 3.9rem;
+  letter-spacing: 0.07rem;
   text-align: center;
-  width: 257px;
+  width: 25.7rem;
 }
 
 .title-input .text-style-1 {
@@ -158,71 +159,71 @@ select,input:focus { outline:0 !important; }
 
 .select-a-topic {
   font-family: 'Open Sans';
-	font-size: 11px;
+	font-size: 1.1rem;
 	font-weight: 600;
-  height: 15px;
-  letter-spacing: 0.7px;
+  height: 1.5rem;
+  letter-spacing: 0.07rem;
   margin-left: 10%;
   text-align: left;
-	width: 142px;
+	width: 14.2rem;
 }
 
 .rectangle-3 .topics-title-rectangle {
-	border: solid 0.5px;
+	border: solid 0.05rem;
   border-bottom: transparent;
-  height: 39px;
+  height: 3.9rem;
   margin-left: 10%;
-	width: 257px;
+	width: 25.7rem;
 }
 
 .topics-title {
 	font-family: 'Open Sans';
-	font-size: 11px;
+	font-size: 1.1rem;
 	font-weight: 600;
-	letter-spacing: 0.7px;
+	letter-spacing: 0.07rem;
 	text-align: left;
   text-align: center;
 }
 
 .topics-rectangle {
-  border: solid 0.5px;
-  height: 290px;
+  border: solid 0.05rem;
+  height: 29rem;
   margin: 0 0 0 10%;
-  width: 257px;
+  width: 25.7rem;
 }
 
 .list {
   font-family: 'Open Sans';
-	font-size: 13px;
-  letter-spacing: 1.9px;
+	font-size: 1.3rem;
+  letter-spacing: 0.19rem;
   margin-top: 2%;
   padding-left: 10%;
 	text-align: left;
 }
 
 li {
-  border-bottom: solid 0.5px;
-  padding: 6px;
+  border-bottom: solid 0.05rem;
+  padding: 0.6rem;
 }
 
 li:hover {
   background-color: #f4f4f4;
-  border-right: solid 0.5px;
+  border-right: solid 0.05rem;
 }
 
 li.selected {
   background-color: #f4f4f4;
-  border-right: solid 0.5px;
+  border-right: solid 0.05rem;
 }
 
 .submit-div {
   background-color: black;
-	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
-	border: solid 1px;
-  height: 39px;
+	box-shadow: 0 0.2rem 0.4rem 0 rgba(0, 0, 0, 0.3);
+	border: solid 0.1rem;
+  height: 3.9rem;
   margin: 5% 0 0 34%;
   padding: 0;
-	width: 113.5px;
+	width: 11.35rem;
 }
 
 .submit-div .submit {
@@ -231,19 +232,19 @@ li.selected {
   border: transparent;
 	color: white;
   font-family: 'Open Sans';
-	font-size: 11px;
+	font-size: 1.1rem;
 	font-weight: 300;
-  letter-spacing: 1.6px;
+  letter-spacing: 0.16rem;
   margin-top: 0;
   padding: 9% 0 0 12%;
   text-align: center;
 }
 
 .smilies {
-	height: 28px;
+	height: 2.8rem;
   margin: 6% 0 0   45%;
 	object-fit: contain;
-  width: 48px;
+  width: 4.8rem;
 }
 
 .football {

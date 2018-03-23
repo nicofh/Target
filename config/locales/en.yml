@@ -40,3 +40,7 @@ en:
   select_a_topic: 'SELECT A TOPIC'
   talk_about: 'What do you want to talk about?'
   save_target: 'SAVE TARGET'
+  target_mvd: 'TARGET MVD'
+  home_title: 'Find people near you & Connect'
+  home_text: 'Create a  target  wherever on the map, specify your interest:
+     Travel, Dating, Music, etc and start conecting with others who share your interest.'

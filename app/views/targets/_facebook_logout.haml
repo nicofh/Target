@@ -1,7 +1,7 @@
 :javascript
   window.fbAsyncInit = function() {
     FB.init({
-      appId      : '1653169284778740',
+      appId      : ENV['FB_APP_ID'],
       cookie     : true,
       xfbml      : true,
       version    : 'v2.12'
@@ -16,10 +16,10 @@
      js.src = "https://connect.facebook.net/en_US/sdk.js";
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
-.fb-block
+.fb-logout-block
   - unless current_user
     = link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path, class: 'fb'
   - else
     .fb
-      = current_user[:name]
-      = link_to "Logout", destroy_user_session_path, method: :delete, class: 'fb'
+      = current_user.name
+      = link_to "Logout", destroy_user_session_path, method: :delete, class: 'fb-logout'
