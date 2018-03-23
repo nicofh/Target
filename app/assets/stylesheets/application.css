@@ -13,3 +13,76 @@
  *= require_tree .
  *= require_self
  */
+html, body {
+  height: 100%;
+  margin: 0;
+  width: 100%;
+  overflow-y: scroll;
+}
+
+select,input:focus { outline:0 !important; }
+
+.smilies-big {
+  height: 78px;
+  object-fit: contain;
+  width: 133px;
+  margin: 5% 0 0 46%;
+}
+
+.target-mvd {
+  color: black;
+  font-family: 'Open Sans';
+  font-size: 20px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 3px;
+  margin-left: 45%;
+}
+
+.target-mvd.text-style-1 {
+  letter-spacing: normal;
+}
+
+.home-title {
+  color: #212121;
+  font-family: 'Open Sans';
+  font-size: 18px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.78;
+  letter-spacing: normal;
+  margin-left: 41%;
+}
+
+.home-text {
+  color: black;
+  font-family: 'Open Sans';
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.86;
+  letter-spacing: normal;
+  margin-left: 39%;
+  text-align: center;
+  width: 321px;
+}
+
+.fb-block {
+  background-color: #3B5998;
+  float: left;
+  height: 3%;
+  margin-left: 43%;
+  padding: 0;
+  text-align: center;
+  width: 200px;
+}
+
+.fb {
+  color: white;
+  font-family: 'Open Sans';
+  text-decoration: none;
+}

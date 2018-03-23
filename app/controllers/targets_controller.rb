@@ -1,6 +1,6 @@
 class TargetsController < ApplicationController
   helper_method :topics
-  before_action :authenticate_user!, only: :create
+  before_action :authenticate_user!
 
   def new
     @target = Target.new
