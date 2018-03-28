@@ -3,12 +3,12 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
   authenticated :user do
-    root to: 'targets#index'
+    root to: 'targets#new'
   end
 
   devise_scope :user do
     root to: 'devise/sessions#new'
   end
 
-  resources :targets, only: %i[new create index]
+  resources :targets, except: %i[update show]
 end
