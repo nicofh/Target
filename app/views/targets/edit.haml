@@ -1,0 +1,39 @@
+= render 'targets/facebook_logout'
+#googleMap
+= form_for target, url: {action: 'edit'}, html: {class:'rectangle-3'} do |f|
+  .rectangle-2
+    %p.create-target= t('edit_target')
+  = image_tag image_path('group.svg'),
+    class: 'group'
+  %p.page-title= t('edit_selected_target')
+  %p.specify-area-lenght= t('specify_area_lenght')
+  .length-rectangle
+    = f.select(:length,[['100 m',100],['200 m',200],['500 m',500],['1 km', 1000]],{},id: 'radius_select' ,class: 'length', disabled:true)
+  %p.target-title= t('target_title')
+  .title-rectangle
+    = f.text_field(:title, class:'title-input', value: target.title, disabled:true)
+    %br/
+  %p.select-a-topic= t('select_a_topic')
+  .topics-title-rectangle
+    %p.topics-title= t('talk_about')
+  .topics-rectangle
+    %ul.list#topic-list
+      - topics.each do |topic|
+        %li{class: topic.capitalize == target.topic ? "#{topic} selected" : topic}
+          = topic.capitalize
+  = f.hidden_field(:topic, id:'topic')
+  = f.hidden_field(:latitude, id:'latitude')
+  = f.hidden_field(:longitude, id:'longitude')
+  - if current_user
+    = f.hidden_field(:user_id, value: current_user.id)
+  %br/
+  .delete-div
+    = link_to t('delete_target'), target, method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete-button'
+  - if flash[:alert]
+    .alert= flash[:alert]
+  = image_tag image_path('smilies.png'),
+    class: 'smilies'
+:javascript
+  window.onload = function() {
+    targetEdit();
+  };

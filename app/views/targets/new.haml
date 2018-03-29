@@ -1,7 +1,5 @@
 = render "targets/facebook_logout"
 #googleMap
-%script{src: "http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"}
-%script{src: "https://maps.googleapis.com/maps/api/js?key=" + ENV['GOOGLE_API_KEY'] + "&callback=targetNew"}
 :javascript
   targetNew();
 = form_for @target, url: {action: "create"}, html: {class:"rectangle-3"} do |f|
@@ -38,6 +36,9 @@
   = image_tag image_path("smilies.png"), |
     class: "smilies"                        |
 :javascript
+  window.onload = function() {
+    loadLocation();
+  };
   var $li = $('li').click(function() {
       $li.removeClass('selected');
       $(this).addClass('selected');

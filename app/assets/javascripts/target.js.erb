@@ -2,11 +2,17 @@
 // All this logic will automatically be available in application.js.
 // You can use CoffeeScript in this file: http://coffeescript.org/
 function targetIndex() {
-  var map = createMap();
+  var map = createMap(-34.906268,-56.186120);
+};
+
+function targetEdit() {
+  var latitude = document.getElementById("latitude").value;
+  var longitude =  document.getElementById("longitude").value;
+  var map = createMap(latitude, longitude);
 };
 
 function targetNew() {
-  var map = createMap();
+  var map = createMap(-34.906268,-56.186120);
 
   var newMarker = new google.maps.Marker({
     position: new google.maps.LatLng(-34.906268,-56.186120),
@@ -47,19 +53,24 @@ function targetNew() {
   }
 };
 
-function createMap() {
+function createMap(latitude, longitude) {
   var mapProp = {
-      center:new google.maps.LatLng(-34.906268,-56.186120),
+      center: new google.maps.LatLng(latitude,longitude),
       zoom:15,
   };
   var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
   $( document ).ready(function() {
-    $.getJSON(mapTopicImage['Json'], function(json) {
-      $(json).each(function() {
+    $.getJSON("<%= targets_path %>", function(target) {
+      $(target).each(function() {
         marker = new google.maps.Marker({
           position: new google.maps.LatLng(this.latitude, this.longitude),
           map: map,
-          icon: { url: mapTopicImage[this.topic] }
+          icon: { url: mapTopicImage[this.topic] },
+          url: this.edit_url
+        });
+
+        google.maps.event.addListener(marker, 'click', function() {
+          window.location.href = this.url;
         });
 
         var radius = new google.maps.Circle({

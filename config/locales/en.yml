@@ -34,6 +34,8 @@ en:
   login_missing: 'Must log in to create new Target'
   create_target: 'CREATE TARGET'
   create_new_target: 'CREATE NEW TARGET'
+  edit_target: 'EDIT TARGET'
+  edit_selected_target: 'EDIT SELECTED TARGET'
   specify_area_lenght: 'SPECIFY AREA LENGHT'
   target_title: 'TARGET TITLE'
   choose_title: 'Choose a title for your target'
@@ -44,3 +46,4 @@ en:
   home_title: 'Find people near you & Connect'
   home_text: 'Create a  target  wherever on the map, specify your interest:
      Travel, Dating, Music, etc and start conecting with others who share your interest.'
+  delete_target: 'DELETE TARGET'

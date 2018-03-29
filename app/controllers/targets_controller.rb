@@ -1,5 +1,5 @@
 class TargetsController < ApplicationController
-  helper_method :topics
+  helper_method :topics, :target
   before_action :authenticate_user!
 
   def new
@@ -11,7 +11,7 @@ class TargetsController < ApplicationController
     @targets = @all_targets.last(10)
     respond_to do |format|
       format.html
-      format.json { render json: @all_targets }
+      format.json
     end
   end
 
@@ -24,6 +24,19 @@ class TargetsController < ApplicationController
     end
   end
 
+  def edit
+    respond_to do |format|
+      format.html
+    end
+  end
+
+  def destroy
+    target.destroy!
+    redirect_to new_target_path
+  end
+
+  private
+
   def create_fail(message)
     flash.now[:alert] = message
     render :new
@@ -35,5 +48,9 @@ class TargetsController < ApplicationController
 
   def topics
     @topics ||= Target::TOPICS
+  end
+
+  def target
+    @target ||= current_user.targets.find(params[:id])
   end
 end
