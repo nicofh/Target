@@ -66,16 +66,16 @@ describe TargetsController, type: :controller do
                  length: 1000, latitude: -34.905446, longitude: -56.206291,
                  topic: 'Football', user: User.find(1))
         end
+
         let!(:target_compatible) do
           create(:target,
                  length: 1000, latitude: -34.906048, longitude: -56.205994,
                  topic: 'Football')
         end
+
         it 'returns compatible targets' do
           get :index
-          target_1.matches.each do |m|
-            expect(assigns(:matches)).to include(m)
-          end
+          expect(assigns(:matches)).to match_array(target_1.matches)
         end
       end
     end

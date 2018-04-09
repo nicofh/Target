@@ -1,7 +1,7 @@
 class Target < ApplicationRecord
+  TOPICS = %w[football travel politics art dating music movies series food].freeze
   validates :topic, :length, :title, :latitude, :longitude, :user, presence: true
   belongs_to :user
-  TOPICS = %w[football travel politics art dating music movies series food].freeze
 
   scope :shared_topic, ->(target) { where(topic: target.topic).where.not(user_id: target.user_id) }
 
