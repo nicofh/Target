@@ -8,7 +8,7 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     %link{href: "//fonts.googleapis.com/css?family=Open+Sans:light,bold,italic,800,700,300,600,800,400", :rel => "stylesheet", :type => "text/css"}/
     %script{src: 'https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'}
-    %script{src: 'https://maps.googleapis.com/maps/api/js?key=' + ENV['GOOGLE_API_KEY'] + '&callback=targetEdit'}
+    %script{src: 'https://maps.googleapis.com/maps/api/js?key=' + ENV['GOOGLE_API_KEY']}
   %body
     :javascript
       var mapTopicImage = {

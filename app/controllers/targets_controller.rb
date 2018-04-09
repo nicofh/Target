@@ -9,6 +9,7 @@ class TargetsController < ApplicationController
   def index
     @all_targets = Target.all
     @targets = @all_targets.last(10)
+    matches
     respond_to do |format|
       format.html
       format.json
@@ -33,6 +34,11 @@ class TargetsController < ApplicationController
   def destroy
     target.destroy!
     redirect_to new_target_path
+  end
+
+  def matches
+    @matches = current_user.targets.map(&:matches)
+    @matches = @matches.flatten
   end
 
   private
