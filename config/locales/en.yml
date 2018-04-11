@@ -47,3 +47,4 @@ en:
   home_text: 'Create a  target  wherever on the map, specify your interest:
      Travel, Dating, Music, etc and start conecting with others who share your interest.'
   delete_target: 'DELETE TARGET'
+  maximum_targets: '10 Targets limit reached'

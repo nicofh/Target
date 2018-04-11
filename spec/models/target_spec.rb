@@ -8,6 +8,16 @@ RSpec.describe Target, type: :model do
     it { should validate_presence_of(:latitude) }
     it { should validate_presence_of(:longitude) }
     it { should validate_presence_of(:user) }
+
+    context 'when the user has already reached the target count limit' do
+      let!(:user_1) { create :user }
+      let!(:targets) { create_list(:target, 10, user: user_1) }
+
+      it 'does not allow to create another target' do
+        target = build(:target, user: user_1)
+        expect(target).to_not be_valid
+      end
+    end
   end
 
   describe 'matches' do
