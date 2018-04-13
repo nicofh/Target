@@ -21,7 +21,7 @@ class TargetsController < ApplicationController
     if @target.persisted?
       redirect_to targets_path
     else
-      create_fail(t(:target_fail))
+      handle_target_fail
     end
   end
 
@@ -43,8 +43,17 @@ class TargetsController < ApplicationController
 
   private
 
+  def handle_target_fail
+    if @target.errors[:user].first == 'limit reached'
+      create_fail(t(:maximum_targets))
+    else
+      create_fail(t(:target_fail))
+    end
+  end
+
   def create_fail(message)
     flash.now[:alert] = message
+    new
     render :new
   end
 
